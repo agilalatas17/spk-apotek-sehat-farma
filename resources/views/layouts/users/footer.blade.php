@@ -8,7 +8,12 @@
             <div class="flex flex-wrap items-center justify-center py-6 gap-4 lg:gap-6 lg:mt-0">
                 <a href="#"
                     class="text-sm text-gray-600 transition-colors duration-300 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400">
-                    Home
+                    Beranda
+                </a>
+
+                <a href="#"
+                    class="text-sm text-gray-600 transition-colors duration-300 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400">
+                    Rekomendasi Obat
                 </a>
 
                 <a href="#"
