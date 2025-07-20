@@ -1,28 +1,59 @@
 <x-user-layout>
     <header class="bg-white">
-        <div class="w-full bg-center bg-cover h-screen"
-            style="background-image: url('https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80');">
-            <div class="flex items-center justify-center w-full px-6 py-8 lg:h-screen lg:w-1/2">
-                <div class="max-w-xl">
-                    <h2 class="text-3xl font-semibold text-gray-800 dark:text-white lg:text-4xl">Build Your New <span
-                            class="text-blue-600 dark:text-blue-400">Idea</span></h2>
+        <div
+            class="container flex flex-col px-6 my-16 py-10 mx-auto space-y-6 lg:h-[48rem] lg:py-16 lg:flex-row lg:items-center">
+            <div class="w-full lg:w-1/2">
+                <div class="lg:max-w-lg">
+                    <h1 class="text-3xl font-semibold text-gray-800 lg:text-5xl">Selamat Datang
+                        <br> di <span class="text-sky-500 ">Apotek Farma</span>
+                    </h1>
 
-                    <p class="mt-4 text-sm text-gray-500 dark:text-gray-400 lg:text-base">Lorem ipsum dolor sit amet,
-                        consectetur adipisicing elit. Blanditiis commodi cum cupiditate ducimus, fugit harum id
-                        necessitatibus odio quam quasi, quibusdam rem tempora voluptates.</p>
+                    <p class="mt-3 text-gray-600 dark:text-gray-400">Apotek Farma menyediakan berbagai produk kesehatan
+                        dan siap melayani anda dengan sepenuh hati. Kami menjamin semua produk yang kami jual asli dan
+                        terjaga kualitasnya.
+                    </p>
 
-                    <div class="flex flex-col mt-6 space-y-3 lg:space-y-0 lg:flex-row">
-                        <a href="#"
-                            class="block px-5 py-2 text-sm font-medium tracking-wider text-center text-white transition-colors duration-300 transform bg-gray-900 rounded-md hover:bg-gray-700">Get
-                            Started</a>
-                        <a href="#"
-                            class="block px-5 py-2 text-sm font-medium tracking-wider text-center text-gray-700 transition-colors duration-300 transform bg-gray-200 rounded-md lg:mx-4 hover:bg-gray-300">Learn
-                            More</a>
-                    </div>
+                    <button
+                        class="w-full px-5 py-3.5 mt-6 text-sm tracking-wider text-white uppercase transition-colors duration-300 transform bg-blue-600 rounded-lg lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500">Cari
+                        rekomendasi obat</button>
                 </div>
+            </div>
+
+            <div class="flex items-center justify-center w-full h-5/6 lg:w-4/6">
+                <img class="object-cover w-full h-full mx-auto rounded-md"
+                    src="{{ asset('images/apotek (1).jpg') }}" alt="glasses photo">
             </div>
         </div>
     </header>
+
+    <section class="bg-white">
+        <div class="container px-6 py-20 mx-auto">
+            <div class="mt-8 space-y-8 lg:mt-12">
+                <div class="lg:flex lg:items-center">
+                    <div class="mt-4 lg:w-full lg:mt-0">
+                        <img class="object-cover w-full h-4/5 rounded-lg md:h-96"
+                            src="{{ asset('images/tablet.jpg') }}"
+                            alt="">
+                    </div>
+                    <div class="lg:w-1/2 px-12">
+                        <p class="text-md font-semibold tracking-wider text-gray-600 uppercase">Fasilitas & Layananan
+                        </p>
+                        <h2 class="my-6 text-5xl font-medium font-serif text-gray-800 capitalize">Apotek Sehat <br>
+                            Farma</h2>
+
+                        <hr class="border border-sky-500 w-[10rem]">
+
+                        <p class="mt-3 text-gray-600">Apotek Farma memberikan produk asli yang telah
+                            terdaftar di BPOM dan memiliki nomer izin edar. Apoteker kami memberikan pelayanan yang
+                            ramah dan memudahkan anda berkonsultasi seputar medikasi.
+                        </p>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
 
     {{-- Hero Section + Form --}}
     <section id="form-preferensi" class="bg-gray-50 py-16 px-4">
