@@ -20,19 +20,18 @@
             </div>
 
             <div class="flex items-center justify-center w-full h-5/6 lg:w-4/6">
-                <img class="object-cover w-full h-full mx-auto rounded-md"
-                    src="{{ asset('images/apotek (1).jpg') }}" alt="glasses photo">
+                <img class="object-cover w-full h-full mx-auto rounded-md" src="{{ asset('images/apotek (1).jpg') }}"
+                    alt="glasses photo">
             </div>
         </div>
     </header>
 
     <section class="bg-white">
-        <div class="container px-6 py-20 mx-auto">
+        <div class="container px-6 py-44 mx-auto">
             <div class="mt-8 space-y-8 lg:mt-12">
                 <div class="lg:flex lg:items-center">
                     <div class="mt-4 lg:w-full lg:mt-0">
-                        <img class="object-cover w-full h-4/5 rounded-lg md:h-96"
-                            src="{{ asset('images/tablet.jpg') }}"
+                        <img class="object-cover w-full h-4/5 rounded-lg md:h-96" src="{{ asset('images/tablet.jpg') }}"
                             alt="">
                     </div>
                     <div class="lg:w-1/2 px-12">
@@ -56,19 +55,17 @@
     </section>
 
     {{-- Hero Section + Form --}}
-    <section id="form-preferensi" class="bg-gray-50 py-16 px-4">
+    {{-- <section id="form-preferensi" class="bg-gray-50 py-16 px-4">
         <div class="container mx-auto text-center">
             <h1 class="text-3xl md:text-4xl font-bold text-black mb-4">Temukan Obat Terbaik Sesuai Kebutuhan Anda</h1>
             <p class="text-gray-700 text-base md:text-lg mb-8 max-w-2xl mx-auto">
                 Sistem rekomendasi yang menyesuaikan rasa, bentuk, harga, dan efek samping sesuai preferensimu.
             </p>
 
-            {{-- FORM Preferensi --}}
             <form action="#" method="POST"
                 class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto text-left">
                 @csrf
 
-                {{-- Rasa Obat --}}
                 <div>
                     <label class="block font-medium mb-1">Rasa Obat</label>
                     <select name="rasa" class="w-full rounded border-gray-300 p-2">
@@ -78,7 +75,6 @@
                     </select>
                 </div>
 
-                {{-- Efek Samping --}}
                 <div>
                     <label class="block font-medium mb-1">Tingkat Efek Samping</label>
                     <select name="efek_samping" class="w-full rounded border-gray-300 p-2">
@@ -88,7 +84,6 @@
                     </select>
                 </div>
 
-                {{-- Harga --}}
                 <div>
                     <label class="block font-medium mb-1">Kisaran Harga</label>
                     <select name="harga" class="w-full rounded border-gray-300 p-2">
@@ -98,7 +93,6 @@
                     </select>
                 </div>
 
-                {{-- Bentuk Sediaan --}}
                 <div>
                     <label class="block font-medium mb-1">Bentuk Sediaan</label>
                     <select name="bentuk" class="w-full rounded border-gray-300 p-2">
@@ -108,7 +102,7 @@
                     </select>
                 </div>
 
-                {{-- Tombol Submit --}}
+
                 <div class="md:col-span-2 text-center mt-4">
                     <button type="submit"
                         class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-500 transition w-full md:w-auto shadow-md">
@@ -117,10 +111,10 @@
                 </div>
             </form>
         </div>
-    </section>
+    </section> --}}
 
     {{-- Keunggulan --}}
-    <section class="py-16 px-4 bg-white">
+    {{-- <section class="py-16 px-4 bg-white">
         <div class="container mx-auto text-center">
             <h2 class="text-2xl md:text-3xl font-semibold mb-10 text-gray-800">Mengapa Menggunakan Sistem Ini?</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -147,10 +141,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     {{-- CTA Akhir --}}
-    <section class="bg-white py-28 px-4 mx-auto text-black text-center">
+    {{-- <section class="bg-white py-28 px-4 mx-auto text-black text-center">
         <h2 class="text-2xl md:text-3xl font-bold mb-4">Siap Temukan Obat Terbaik?</h2>
         <p class="mb-6 text-base md:text-lg text-gray-600">
             Mulai isi preferensi Anda dan lihat rekomendasi terbaik secara langsung.
@@ -159,5 +153,5 @@
             class="bg-sky-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-sky-400 transition shadow-lg">
             Coba Sekarang
         </a>
-    </section>
+    </section> --}}
 </x-user-layout>
