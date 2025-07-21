@@ -80,7 +80,7 @@
                         </div>
                         <div class="px-2 sm:-ml-4 text-gray-900">
                             <h2 class="text-xl sm:text-3xl font-bold capitalize mb-0">
-                                {{ __('Hi, Welcome ') . Auth::user()->name . '!' }} <span
+                                {{ __('Hi, Welcome back ') . Auth::user()->name . '!' }} <span
                                     class="inline-block text-xl sm:text-2xl">👋</span>
                             </h2>
                         </div>
