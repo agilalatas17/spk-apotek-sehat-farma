@@ -26,14 +26,15 @@ class PenilaianController extends Controller
      */
     public function store(Request $request)
     {
-        foreach ($request->nilai as $obat_id => $nilai_kriteria) {
-            foreach ($nilai_kriteria as $kriteria_id => $nilai) {
-                NilaiAlternatif::updateOrCreate( // Melakukan update nilai ke tabel nilai alternatif
+        foreach ($request->nilai as $obat_id => $kriterias) {
+            foreach ($kriterias as $kriteria_id => $nilai) {
+                NilaiAlternatif::updateOrCreate(
                     ['obat_id' => $obat_id, 'kriteria_id' => $kriteria_id],
                     ['nilai' => $nilai]
                 );
             }
         }
-        return redirect()->route('layouts.admin.penilaian.index');
+
+        return redirect()->route('admin.penilaian.index')->with('success', 'Data penilaian berhasil disimpan.');
     }
 }
