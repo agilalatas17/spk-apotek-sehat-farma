@@ -17,6 +17,7 @@ use App\Http\Controllers\Auth\PasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Http\Controllers\Users\LandingController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -33,7 +34,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('landing.welcome');
 });
 
 Route::get('/dashboard', function () {
@@ -104,6 +105,12 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::get('/penilaian', [PenilaianController::class, 'index'])->name('penilaian.index');
     Route::post('/penilaian', [PenilaianController::class, 'store'])->name('penilaian.store');
     Route::get('/hasil', [HasilController::class, 'index'])->name('hasil.index');
+});
+
+// User Groups
+Route::controller(LandingController::class)->group(function () {
+    Route::get('/', 'welcome')->name('landing.welcome');
+    Route::get('/rekomendasi', 'rekomendasi')->name('landing.rekomendasi');
 });
 
 require __DIR__ . '/auth.php';
