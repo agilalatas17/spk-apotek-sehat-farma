@@ -1,5 +1,5 @@
 <aside
-    class="flex flex-col w-72 h-screen px-6 py-8 overflow-y-auto bg-white border-r rtl:border-r-0 rtl:border-l dark:bg-zinc-900 dark:border-gray-700">
+    class="flex flex-col w-72 max-h-full px-6 py-8 overflow-y-auto bg-white border-r rtl:border-r-0 rtl:border-l dark:bg-zinc-900 dark:border-gray-700">
     <a href="#" class="flex items-center justify-center">
         <img class="w-auto h-3/4" src="{{ asset('images/logo-apotek.png') }}" alt="">
     </a>
