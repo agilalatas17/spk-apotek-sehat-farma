@@ -18,7 +18,14 @@
         </nav>
     </x-slot>
 
-    <section class="container px-6 py-8 mx-auto">
+    <div class="px-16 py-8">
+        <div>
+            <h1 class="text-2xl font-bold text-gray-800">Perhitungan SAW - Input Nilai Kriteria</h1>
+            <p class="text-sm text-gray-500">Penentuan obat terbaik berdasarkan kriteria yang telah ditentukan.</p>
+        </div>
+    </div>
+
+    <section class="container px-16 py-2 mx-auto">
         <form method="POST" action="{{ route('admin.penilaian.store') }}">
             @csrf
             <div class="overflow-auto rounded-lg shadow">
@@ -32,13 +39,13 @@
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200 text-gray-800">
-                        @foreach ($obats as $obat)
+                        @foreach ($obats as $o)
                             <tr>
-                                <td class="px-6 py-4 whitespace-nowrap font-medium">{{ $obat->nama_obat }}</td>
+                                <td class="px-6 py-4 whitespace-nowrap font-medium">{{ $o->nama_obat }}</td>
                                 @foreach ($kriteria as $k)
                                     <td class="px-6 py-4 whitespace-nowrap">
-                                        <input name="nilai[{{ $obat->id }}][{{ $k->id }}]" type="number"
-                                            min="1" max="5"
+                                        <input name="nilai[{{ $o->id }}][{{ $k->id }}]" type="number"
+                                            step="0.01"
                                             class="w-20 px-2 py-1 text-sm border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                                             required>
                                     </td>
