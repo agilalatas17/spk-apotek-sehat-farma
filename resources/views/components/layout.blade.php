@@ -19,7 +19,7 @@
 
 <body class="font-sans bg-white text-gray-900">
     {{-- Navbar --}}
-    @include('layouts.users.navbar')
+    @include('landing.partials.navbar')
 
     <!-- Page Content -->
     <main>
@@ -27,7 +27,7 @@
     </main>
 
     {{-- Footer --}}
-    @include('layouts.users.footer')
+    @include('landing.partials.footer')
 </body>
 
 </html>
