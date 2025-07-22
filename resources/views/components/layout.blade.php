@@ -11,30 +11,23 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <script src="//unpkg.com/alpinejs" defer></script>
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="bg-white min-h-screen">
-    <div class="flex flex-col md:flex-row min-h-screen">
-        @include('layouts.admin.sidebar')
+<body class="font-sans bg-white text-gray-900">
+    {{-- Navbar --}}
+    @include('landing.partials.navbar')
 
-        <!-- Page Heading -->
-        <!-- Page Content -->
-        <main class="flex-1 p-auto overflow-y-auto">
-            @if (isset($header))
-                <header class="mb-4">
-                    <h1 class="text-2xl font-semibold text-black">
-                        {{ $header }}
-                    </h1>
-                </header>
-            @endif
+    <!-- Page Content -->
+    <main>
+        {{ $slot }}
+    </main>
 
-            {{ $slot }}
-        </main>
-    </div>
-
+    {{-- Footer --}}
+    @include('landing.partials.footer')
 </body>
 
 </html>
