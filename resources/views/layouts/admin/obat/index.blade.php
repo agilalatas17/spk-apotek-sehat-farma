@@ -44,11 +44,10 @@
                     <tr>
                         <th class="px-8 py-5 text-left font-medium">No</th>
                         <th class="px-8 py-5 text-left font-medium">Nama Obat</th>
-                        <th class="px-8 py-5 text-left font-medium">Kandungan</th>
                         <th class="px-8 py-5 text-left font-medium">Rasa Obat</th>
-                        <th class="px-8 py-5 text-left font-medium">Efek Samping</th>
+                        <th class="px-14 py-5 text-left font-medium">Efek Samping</th>
+                        <th class="px-8 py-5 text-left font-medium">Bentuk Obat</th>
                         <th class="px-8 py-5 text-left font-medium">Harga</th>
-                        <th class="px-8 py-5 text-left font-medium">Bentuk</th>
                         <th class="px-8 py-5 text-left font-medium">Stok</th>
                         <th scope="col" class="relative py-3.5 px-4">
                             <span class="sr-only">Actions</span>
@@ -58,15 +57,14 @@
                 <tbody class="bg-white divide-y divide-gray-200">
                     @foreach ($data as $index => $obat)
                         <tr>
-                            <td class="px-8 py-3 whitespace-nowrap">
+                            <td class="px-10 py-3 whitespace-nowrap">
                                 {{ ($data->currentPage() - 1) * $data->perPage() + $loop->iteration }}</td>
                             <td class="px-8 py-3 whitespace-nowrap capitalize">{{ $obat->nama_obat }}</td>
-                            <td class="px-8 py-3 whitespace-nowrap capitalize">{{ $obat->kandungan }}</td>
                             <td class="px-8 py-3 whitespace-nowrap capitalize">{{ $obat->rasa_obat }}</td>
                             <td class="px-8 py-3 whitespace-nowrap capitalize">{{ $obat->efek_samping }}</td>
+                            <td class="px-8 py-3 whitespace-nowrap capitalize">{{ $obat->bentuk_obat }}</td>
                             <td class="px-6 py-3 whitespace-nowrap capitalize">
                                 Rp{{ number_format($obat->harga_obat, 0, ',', '.') }}</td>
-                            <td class="px-8 py-3 whitespace-nowrap capitalize">{{ $obat->bentuk_obat }}</td>
                             <td class="px-10 py-3 whitespace-nowrap capitalize">{{ $obat->stok_obat }}</td>
                             <td class="px-8 py-3 text-center">
                                 <div class="flex justify-center gap-2">

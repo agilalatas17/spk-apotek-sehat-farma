@@ -54,14 +54,17 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end gap-3 mt-6">
+                    <div class="flex justify-end gap-2 mt-6">
                         <a href="{{ route('admin.kriteria.index') }}"
-                            class="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-red-600 rounded-md hover:bg-red-500 focus:outline-none focus:bg-gray-600">
+                            class="inline-block px-6 py-2 rounded-xl shadow text-sm font-medium text-white bg-red-600 hover:bg-red-700 transition">
                             Cancel
                         </a>
                         <button type="submit"
-                            class="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:bg-gray-600">Save</button>
+                            class="inline-block px-6 py-2 rounded-xl shadow text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 transition">
+                            Save
+                        </button>
                     </div>
+
                 </form>
             </div>
         </div>

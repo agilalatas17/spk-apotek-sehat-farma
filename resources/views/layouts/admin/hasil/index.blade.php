@@ -19,7 +19,7 @@
     </x-slot>
 
     {{-- Judul Halaman --}}
-    <div class="px-16 py-8">
+    <div class="px-16 py-3">
         <div>
             <h1 class="text-2xl font-bold text-gray-800">Perhitungan SAW - Rekomendasi Obat</h1>
             <p class="text-sm text-gray-500">Berikut adalah hasil perhitungan Simple Additive Weighting.</p>
