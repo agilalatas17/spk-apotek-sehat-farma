@@ -5,31 +5,57 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Validation\ValidationException;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationData;
 use Illuminate\View\View;
 
 class AuthenticatedSessionController extends Controller
 {
     /**
-     * Display the login view.
+     * Display the login user view.
      */
-    public function create(): View
+    public function showUserLoginForm()
     {
-        return view('auth.login');
+        return view('auth.login-user');
+    }
+
+    public function loginUser(Request $request)
+    {
+        $credentials = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        if (Auth::attempt(array_merge($credentials, ['role' => 'user']))) {
+            return redirect()->route('user.landing.welcome');
+        }
+
+        return back()->withErrors(['email' => 'Login user gagal']);
     }
 
     /**
-     * Handle an incoming authentication request.
+     * Display the login admin view.
      */
-    public function store(LoginRequest $request): RedirectResponse
+    public function showAdminLoginForm()
     {
-        $request->authenticate();
+        return view('auth.login-admin');
+    }
 
-        $request->session()->regenerate();
+    public function loginAdmin(Request $request)
+    {
+        $credentials = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        if (Auth::attempt(array_merge($credentials, ['role' => 'admin']))) {
+            return redirect()->route('admin.dashboard');
+        }
+
+        return back()->withErrors(['email' => 'Login admin gagal']);
     }
 
     /**
