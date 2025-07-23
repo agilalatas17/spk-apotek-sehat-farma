@@ -8,6 +8,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
@@ -16,37 +17,58 @@ use Illuminate\View\View;
 class RegisteredUserController extends Controller
 {
     /**
-     * Display the registration view.
+     * Display the user registration view.
      */
-    public function create(): View
+    public function showUserRegisterForm()
     {
-        return view('auth.register');
+        return view('auth.register-user');
     }
 
-    /**
-     * Handle an incoming registration request.
-     *
-     * @throws \Illuminate\Validation\ValidationException
-     */
-    public function store(Request $request): RedirectResponse
+    public function registerUser(Request $request)
     {
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'name' => 'required',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:6|confirmed',
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => Hash::make($request->password),
+            'password' => bcrypt($request->password),
+            'role' => 'user',
         ]);
 
-        event(new Registered($user));
+        auth()->login($user);
 
-        Auth::login($user);
-        $request->session()->regenerate();
+        return redirect()->route('user.landing.welcome');
+    }
 
-        return redirect(RouteServiceProvider::HOME);
+    /**
+     * Display the admin registration view.
+     */
+    public function showAdminRegisterForm()
+    {
+        return view('auth.register-admin');
+    }
+
+    public function registerAdmin(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:6|confirmed',
+        ]);
+
+        $admin = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+            'role' => 'admin',
+        ]);
+
+        auth()->login($admin);
+
+        return redirect()->route('admin.dashboard');
     }
 }
