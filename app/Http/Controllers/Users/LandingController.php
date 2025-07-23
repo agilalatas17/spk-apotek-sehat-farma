@@ -7,13 +7,8 @@ use Illuminate\Http\Request;
 
 class LandingController extends Controller
 {
-    public function welcome()
+    public function index()
     {
         return view('landing.welcome');
-    }
-
-    public function rekomendasi()
-    {
-        return view('landing.rekomendasi');
     }
 }
