@@ -1,7 +1,8 @@
-<nav x-data="{ isOpen: false }" class="container p-5 mx-auto lg:flex lg:justify-between lg:items-center">
+<nav x-data="{ isOpen: false }"
+    class="sticky top-0 bg-white shadow-md z-20 p-5 px-32 mx-auto lg:flex lg:justify-between lg:items-center">
     <div class="flex items-center justify-between">
         <a href="#">
-            <img class="w-auto h-12 sm:h-16" src="{{ asset('images/logo-apotek.png') }}" alt="">
+            <img class="w-auto h-12 sm:h-16" src="{{ asset('images/logo-apotek.png') }}" alt="Logo">
         </a>
 
         <!-- Mobile menu button -->
@@ -13,7 +14,6 @@
                     viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
                 </svg>
-
                 <svg x-show="isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
                     viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -22,21 +22,48 @@
         </div>
     </div>
 
-    <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+    <!-- Mobile Menu -->
     <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']"
-        class="absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white shadow-md lg:bg-transparent lg:dark:bg-transparent lg:shadow-none dark:bg-white lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center">
-        <div class="flex flex-col space-y-4 lg:mt-0 lg:flex-row lg:px-3 lg:space-y-0">
-            <a class="text-gray-800 font-medium transition-colors duration-300 transform lg:mx-6 hover:text-blue-600"
-                href="{{ route('landing.welcome') }}">Beranda</a>
-            <a class="text-gray-800 font-medium transition-colors duration-300 transform lg:mx-6 hover:text-blue-600"
-                href="{{ route('landing.rekomendasi') }}">Rekomendasi Obat</a>
-            <a class="text-gray-800 font-medium transition-colors duration-300 transform lg:mx-6 hover:text-blue-600"
-                href="#">Contact</a>
+        class="absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white shadow-md lg:bg-transparent lg:shadow-none lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center">
+
+        <div class="flex flex-col space-y-4 lg:flex-row lg:space-y-0 lg:space-x-6">
+            <a class="text-gray-800 font-medium hover:text-blue-600" href="#">Beranda</a>
+            <a class="text-gray-800 font-medium hover:text-blue-600" href="#">Rekomendasi Obat</a>
+            <a class="text-gray-800 font-medium hover:text-blue-600" href="#">Contact</a>
         </div>
 
-        <a class="block px-5 py-2 mt-4 text-sm text-center text-white capitalize bg-blue-600 rounded-lg lg:mt-0 hover:bg-blue-500 lg:w-auto"
-            href="{{ route('login') }}">
-            Sign in
-        </a>
+        <!-- Login/Logout -->
+        <div class="mt-4 lg:mt-0 lg:ml-6">
+            @guest
+                <!-- Jika Belum Login -->
+                <a href="{{ route('login.user') }}"
+                    class="block px-5 py-2 text-sm text-center text-white bg-blue-600 rounded-full hover:bg-blue-500">
+                    Sign in
+                </a>
+            @endguest
+
+            @auth
+                <!-- Jika Sudah Login -->
+                {{-- @if (Auth::user()->role === 'admin')
+                    <a href="{{ route('admin.dashboard') }}"
+                        class="block px-5 py-2 text-sm text-white bg-green-600 rounded-full hover:bg-green-500">
+                        Dashboard
+                    </a>
+                @elseif(Auth::user()->role === 'user')
+                    <a href="{{ route('user.preferensi.index') }}"
+                        class="block px-5 py-2 text-sm text-white bg-green-600 rounded-full hover:bg-green-500">
+                        Preferensi
+                    </a>
+                @endif --}}
+
+                <form method="POST" action="{{ route('logout') }}" class="inline-block ml-3">
+                    @csrf
+                    <button type="submit"
+                        class="block px-5 py-2 text-sm text-center text-white bg-red-600 rounded-full hover:bg-red-500">
+                        Logout
+                    </button>
+                </form>
+            @endauth
+        </div>
     </div>
 </nav>
