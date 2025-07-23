@@ -6,12 +6,12 @@
             </a>
 
             <div class="flex flex-wrap items-center justify-center py-6 gap-4 lg:gap-6 lg:mt-0">
-                <a href="{{ route('landing.welcome') }}"
+                <a href="#"
                     class="text-sm text-gray-600 transition-colors duration-300 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400">
                     Beranda
                 </a>
 
-                <a href="{{ route('landing.rekomendasi') }}"
+                <a href="#"
                     class="text-sm text-gray-600 transition-colors duration-300 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400">
                     Rekomendasi Obat
                 </a>
@@ -20,7 +20,7 @@
                     class="text-sm text-gray-600 transition-colors duration-300 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400">
                     Contact
                 </a>
-                <a href="#"
+                <a href="{{ route('login.admin') }}"
                     class="text-sm text-gray-600 transition-colors duration-300 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400">
                     Teams
                 </a>
