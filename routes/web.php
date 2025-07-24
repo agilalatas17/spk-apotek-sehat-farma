@@ -40,6 +40,10 @@ Route::get('/', function () {
     return view('landing.welcome');
 });
 
+Route::get('/contact', function () {
+    return view('landing.contact');
+});
+
 Route::get('/dashboard', function () {
     return view('layouts.admin.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -81,19 +85,8 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
 
 // User Profile
 Route::middleware(['auth', 'role:user'])->prefix('user')->name('user.')->group(function () {
-    Route::get('/', [LandingController::class, 'index'])->name('landing.welcome');
-
-    Route::get('/preferensi', [PreferensiController::class, 'index'])->name('preferensi.index');
-    Route::post('/preferensi', [PreferensiController::class, 'store'])->name('preferensi.store');
-
-    Route::get('/rekomendasi', [RekomendasiController::class, 'index'])->name('rekomendasi.index');
+    Route::match(['get', 'post'], '/preferensi', [PreferensiController::class, 'index'])
+        ->name('preferensi.index');
 });
-
-
-// User Groups
-// Route::controller(LandingController::class)->group(function () {
-//     Route::get('/', 'welcome')->name('landing.welcome');
-//     Route::get('/rekomendasi', 'rekomendasi')->name('landing.rekomendasi');
-// });
 
 // require __DIR__ . '/auth.php';
