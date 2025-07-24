@@ -11,4 +11,9 @@ class LandingController extends Controller
     {
         return view('landing.welcome');
     }
+
+    public function contact()
+    {
+        return view('landing.contact');
+    }
 }
