@@ -32,7 +32,6 @@ class ObatController extends Controller
     {
         Obat::create($request->validate([
             'nama_obat' => 'required',
-            'kandungan' => 'required',
             'rasa_obat' => 'required',
             'efek_samping' => 'required',
             'harga_obat' => 'required|numeric',
@@ -59,7 +58,6 @@ class ObatController extends Controller
         $obat = Obat::findOrFail($id);
         $obat->update($request->validate([
             'nama_obat' => 'required',
-            'kandungan' => 'required',
             'rasa_obat' => 'required',
             'efek_samping' => 'required',
             'harga_obat' => 'required|numeric',
