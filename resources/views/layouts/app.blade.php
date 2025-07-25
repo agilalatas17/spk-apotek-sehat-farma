@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Apotek Farma') }}</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -20,7 +20,6 @@
     <div class="flex flex-col md:flex-row min-h-screen">
         @include('layouts.admin.sidebar')
 
-        <!-- Page Heading -->
         <!-- Page Content -->
         <main class="flex-1 p-auto overflow-y-auto">
             @if (isset($header))
