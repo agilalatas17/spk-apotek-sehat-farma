@@ -18,7 +18,7 @@
         </nav>
     </x-slot>
 
-    <div class="px-16 py-8">
+    <div class="px-16 py-3">
         <div>
             <h1 class="text-2xl font-bold text-gray-800">Perhitungan SAW - Input Nilai Kriteria</h1>
             <p class="text-sm text-gray-500">Penentuan obat terbaik berdasarkan kriteria yang telah ditentukan.</p>
@@ -28,7 +28,7 @@
     <section class="container px-16 py-2 mx-auto">
         <form method="POST" action="{{ route('admin.penilaian.store') }}">
             @csrf
-            <div class="overflow-auto rounded-lg shadow">
+            <div class="overflow-auto rounded-lg max-w-3xl shadow">
                 <table class="w-full table-auto border border-gray-200">
                     <thead class="bg-gray-600 text-white">
                         <tr>
@@ -56,12 +56,13 @@
                 </table>
             </div>
 
-            <div class="mt-6 flex justify-end">
+            <div class="mt-6 flex justify-start gap-4">
                 <button type="submit"
-                    class="inline-flex items-center px-6 py-2 text-white bg-blue-600 rounded-md hover:bg-blue-500 transition duration-200">
+                    class="inline-block px-6 py-2 rounded-xl shadow text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 transition">
                     Simpan Nilai
                 </button>
             </div>
+            
         </form>
     </section>
 </x-admin-layout>

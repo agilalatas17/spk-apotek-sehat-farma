@@ -19,6 +19,15 @@ class RouteServiceProvider extends ServiceProvider
      */
     public const HOME = '/dashboard';
 
+    public function redirectTo()
+    {
+        if (auth()->user()->role === 'admin') {
+            return '/admin/dashboard';
+        }
+
+        return '/landing';
+    }
+
     /**
      * Define your route model bindings, pattern filters, and other route configuration.
      */

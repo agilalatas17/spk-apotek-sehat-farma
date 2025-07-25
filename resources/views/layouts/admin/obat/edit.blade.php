@@ -36,12 +36,6 @@
                         </div>
 
                         <div>
-                            <label class="text-gray-700" for="kandungan">Kandungan</label>
-                            <input id="kandungan" type="text" name="kandungan" value="{{ $obat->kandungan }}"
-                                class="block w-full px-4 py-4 mt-2 text-gray-900 bg-white border border-gray-200 rounded-md dark:border-gray-600 focus:border-gray-400 focus:ring-gray-300 focus:ring-opacity-40 focus:outline-none focus:ring">
-                        </div>
-
-                        <div>
                             <label class="text-gray-700" for="rasa_obat">Rasa</label>
                             <input id="rasa_obat" type="text" name="rasa_obat" value="{{ $obat->rasa_obat }}"
                                 class="block w-full px-4 py-4 mt-2 text-gray-900 bg-white border border-gray-200 rounded-md dark:border-gray-600 focus:border-gray-400 focus:ring-gray-300 focus:ring-opacity-40 focus:outline-none focus:ring">
@@ -55,14 +49,14 @@
                         </div>
 
                         <div>
-                            <label class="text-gray-700" for="harga_obat">Harga Obat</label>
-                            <input id="harga_obat" type="number" name="harga_obat" value="{{ $obat->harga_obat }}"
+                            <label class="text-gray-700" for="bentuk_obat">Bentuk Obat</label>
+                            <input id="bentuk_obat" type="text" name="bentuk_obat" value="{{ $obat->bentuk_obat }}"
                                 class="block w-full px-4 py-4 mt-2 text-gray-900 bg-white border border-gray-200 rounded-md dark:border-gray-600 focus:border-gray-400 focus:ring-gray-300 focus:ring-opacity-40 focus:outline-none focus:ring">
                         </div>
 
                         <div>
-                            <label class="text-gray-700" for="bentuk_obat">Bentuk Obat</label>
-                            <input id="bentuk_obat" type="text" name="bentuk_obat" value="{{ $obat->bentuk_obat }}"
+                            <label class="text-gray-700" for="harga_obat">Harga Obat</label>
+                            <input id="harga_obat" type="number" name="harga_obat" value="{{ $obat->harga_obat }}"
                                 class="block w-full px-4 py-4 mt-2 text-gray-900 bg-white border border-gray-200 rounded-md dark:border-gray-600 focus:border-gray-400 focus:ring-gray-300 focus:ring-opacity-40 focus:outline-none focus:ring">
                         </div>
 
@@ -83,6 +77,7 @@
                             Save Changes
                         </button>
                     </div>
+
                 </form>
             </div>
         </div>

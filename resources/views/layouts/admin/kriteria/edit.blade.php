@@ -31,7 +31,8 @@
                     <div class="grid grid-cols-1 gap-4 mt-8 sm:grid-cols-1">
                         <div>
                             <label class="text-gray-700" for="nama">Nama Kriteria</label>
-                            <input id="nama" type="text" name="nama" value="{{ $kriteria->nama }}" placeholder="Nama Kriteria"
+                            <input id="nama" type="text" name="nama" value="{{ $kriteria->nama }}"
+                                placeholder="Nama Kriteria"
                                 class="block w-full px-4 py-4 mt-2 text-gray-900 bg-white border border-gray-200 rounded-md dark:border-gray-600 focus:border-gray-400 focus:ring-gray-300 focus:ring-opacity-40 focus:outline-none focus:ring">
                         </div>
 
@@ -47,20 +48,23 @@
 
                         <div>
                             <label class="text-gray-700" for="bobot">Bobot (%)</label>
-                            <input id="bobot" name="bobot" value="{{ $kriteria->bobot }}" type="number" step="0.01"
-                                placeholder="Bobot (0-1), Contoh: 0,20" required
+                            <input id="bobot" name="bobot" value="{{ $kriteria->bobot }}" type="number"
+                                step="0.01" placeholder="Bobot (0-1), Contoh: 0,20" required
                                 class="block w-full px-4 py-4 mt-2 text-gray-900 bg-white border border-gray-200 rounded-md dark:border-gray-600 focus:border-gray-400 focus:ring-gray-300 focus:ring-opacity-40 focus:outline-none focus:ring">
                         </div>
                     </div>
 
-                    <div class="flex justify-end gap-3 mt-6">
+                    <div class="flex justify-end gap-2 mt-6">
                         <a href="{{ route('admin.kriteria.index') }}"
-                            class="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-red-600 rounded-md hover:bg-red-500 focus:outline-none focus:bg-gray-600">
+                            class="inline-block px-6 py-2 rounded-xl shadow text-sm font-medium text-white bg-red-600 hover:bg-red-700 transition">
                             Cancel
                         </a>
                         <button type="submit"
-                            class="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:bg-gray-600">Save</button>
+                            class="inline-block px-6 py-2 rounded-xl shadow text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 transition">
+                            Save Changes
+                        </button>
                     </div>
+
                 </form>
             </div>
         </div>

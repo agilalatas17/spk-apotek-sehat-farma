@@ -87,7 +87,7 @@
                     </div>
                     <div class="px-2 mt-5 sm:ml-2 text-gray-500 font-semibold">
                         <p class="text-sm sm:text-base text-gray-500 leading-relaxed">
-                            Kelola seluruh inventaris data produk, data kriteria, dan data penilaian alternatif dengan
+                            Kelola seluruh data obat, data kriteria, dan data penilaian alternatif dengan
                             efisien dan <br> terorganisir melalui dashboard yang telah dioptimalkan.
                         </p>
                     </div>
